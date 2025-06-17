@@ -9,7 +9,8 @@ document.body.addEventListener('keypress',function(e){
     //key
     const key=document.createElement('div')
     key.className='key'
-    key.textContent=e.key
+    //Adding ternary operator for space as it's key is " "
+    key.textContent=e.key===' '?'Space': e.key
     const smallKey=document.createElement('small')
     smallKey.textContent='key'
     key.appendChild(smallKey)
