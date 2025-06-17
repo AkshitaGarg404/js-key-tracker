@@ -42,8 +42,21 @@ document.body.addEventListener('keypress',function(e){
     const reset= document.createElement('button')
     reset.textContent='Reset'
     reset.addEventListener('click', function(){
+        //reload current page
         location.reload();
     })
     resetcontainer.appendChild(reset)
     document.body.appendChild(resetcontainer)
-})
+
+
+    //Adding an event listener to reload the page on pressing Enter
+    setTimeout(()=>{
+            window.addEventListener('keypress',(e)=>{
+                if(e.key==="Enter"|| e.code==="Enter"|| e.keyCode===13){
+                    location.reload();
+                }
+            })
+        }, 100)
+});
+
+
